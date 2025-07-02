@@ -12,7 +12,7 @@ A beautiful pastel-themed portfolio website showcasing Shruti Shankar Zade's wor
 
 ## 🚀 Live Demo
 
-Visit the live website: [Your Netlify URL will go here]
+Visit the live website: https://shrutizade.netlify.app/
 
 ## 🛠️ Technologies Used
 
