@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(340, 100%, 96%);
+  --foreground: hsl(240, 10%, 18%);
+  --muted: hsl(320, 50%, 95%);
+  --muted-foreground: hsl(240, 5%, 45%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(240, 10%, 18%);
+  --card: hsla(0, 0%, 100%, 0.4);
+  --card-foreground: hsl(240, 10%, 18%);
+  --border: hsl(320, 30%, 85%);
+  --input: hsl(320, 30%, 85%);
+  --primary: hsl(340, 82%, 75%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(280, 70%, 85%);
+  --secondary-foreground: hsl(240, 10%, 18%);
+  --accent: hsl(160, 60%, 85%);
+  --accent-foreground: hsl(240, 10%, 18%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(340, 82%, 75%);
+  --radius: 1rem;
+  
+  /* Pastel Dream Custom Variables */
+  --pastel-pink: hsl(340, 100%, 91%);
+  --pastel-blue: hsl(200, 100%, 90%);
+  --pastel-mint: hsl(160, 85%, 88%);
+  --blush-pink: hsl(340, 82%, 75%);
+  --lavender: hsl(280, 70%, 85%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 4%, 16%);
+  --muted-foreground: hsl(240, 5%, 65%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 4%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 4%, 16%);
+  --input: hsl(240, 4%, 16%);
+  --primary: hsl(340, 82%, 75%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 4%, 16%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 4%, 16%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 63%, 31%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(340, 82%, 75%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-nunito antialiased bg-gradient-to-br from-pink-100 via-blue-100 to-green-100 text-foreground min-h-screen;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .font-baloo {
+    font-family: 'Baloo 2', cursive;
+  }
+
+  .font-fredoka {
+    font-family: 'Fredoka', cursive;
+  }
+
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .glass-effect {
+    @apply bg-white/25 backdrop-blur-lg border border-white/20;
+  }
+
+  .floating-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .bounce-soft {
+    animation: bounce-soft 2s ease-in-out infinite;
+  }
+
+  .pastel-gradient {
+    background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--pastel-blue) 50%, var(--pastel-mint) 100%);
+  }
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-5px); 
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Cursor Effects */
+.cursor-particle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 12px;
+  z-index: 9999;
+  animation: cursorFade 1.5s ease-out forwards;
+}
+
+@keyframes cursorFade {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-30px);
+  }
+}
